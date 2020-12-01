@@ -30,6 +30,30 @@ import (
 //-> peer chaincode invoke -n us -c '{"Args":["CreateEmployer","300","Nicolas","3000"]}' -C myc
 //-> peer chaincode invoke -n us -c '{"Args":["GetAllEmployers"]}' -C myc
 //-> peer chaincode invoke -n us -c '{"Args":["GetEmployerById","100"]}' -C myc
+//===========================TEST NETWORK=====================================================================
+//--- Test-network
+//cd fabric-samples/test-network
+//
+//sudo chmod -R 777 .
+//
+//sudo ./network.sh down
+//sudo ./network.sh up -ca -s couchdb
+//
+//sudo ./network.sh createChannel -c testchannel
+//
+//Estando como root (sudo -i) (de otra forma no funcionó)
+//
+//export GOPATH=/home/protobot/go
+//export GOROOT=/home/protobot/sdk/go1.15.3
+//export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+//
+//cd home/msesarego/fabric-samples/test-network
+//
+//source ./chaincodeLifecycleHueneiPuntos.sh && start  (del lado izquierdo es el nombre del archivo y de derecho es el nombre de la funcion shell a ejecutar)
+//source ./chaincodeLifecycleHueneiPuntos.sh && chaincodeInitLedger
+//source ./chaincodeLifecycleHueneiPuntos.sh && chaincodeAgregarUsuario
+//source ./chaincodeLifecycleHueneiPuntos.sh && chaincodeQueryAll
+//source ./chaincodeLifecycleHueneiPuntos.sh && chaincodeTransferirPuntosPorBuenDesempenio
 
 type SmartContractDefinition struct {
 	contractapi.Contract
